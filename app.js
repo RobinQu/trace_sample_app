@@ -1,3 +1,6 @@
+var tv = require('traceview');
+tv.traceMode = 'always';
+
 var koa = require('koa');
 var Redis = require('ioredis');
 var mysql = require('mysql');

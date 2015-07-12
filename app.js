@@ -11,7 +11,12 @@ var app = koa();
 var redis = new Redis();
 
 var db = mysql.createConnection({host: 'localhost', user: 'root', password: '', database: 'trace_sample_app'});
-db.connect();
+db.connect(function (err) {
+  if(err) {
+    return console.error(err);
+  }
+  console.log('mysql connection ok');
+});
 
 
 var noop = function () {
